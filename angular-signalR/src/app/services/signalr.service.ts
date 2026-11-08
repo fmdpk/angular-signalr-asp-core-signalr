@@ -14,7 +14,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class SignalRService implements OnDestroy {
   private hubConnection!: HubConnection;
 
-  private readonly hubUrl = 'https://localhost:7032/priceHub';
+  private readonly hubUrl = 'http://localhost:5001/priceHub';
 
   private readonly messageSubject = new Subject<any>();
 
