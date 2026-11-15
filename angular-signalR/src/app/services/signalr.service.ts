@@ -8,9 +8,7 @@ import {
 
 import { BehaviorSubject, Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SignalRService implements OnDestroy {
   private hubConnection!: HubConnection;
 
@@ -106,5 +104,6 @@ export class SignalRService implements OnDestroy {
     this.connectionStateSubject.complete();
 
     void this.hubConnection.stop();
+    console.log('destroyed...');
   }
 }

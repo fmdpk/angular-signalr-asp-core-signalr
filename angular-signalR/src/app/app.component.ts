@@ -1,31 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { SignalRService } from './services/signalr.service';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <div class="container">
-      <h1>Real-Time Price Updates</h1>
-      <h2>EUR/USD: {{ signalRService.messages$ | async | json }}</h2>
-    </div>
-  `,
-  styles: [
-    `
-      .container {
-        text-align: center;
-        padding: 50px;
-        font-family: Arial;
-      }
-    `,
-  ],
+  imports: [CommonModule, RouterOutlet, RouterLink],
+  templateUrl: './app.component.html',
+  styles: [``],
 })
-export class AppComponent implements OnInit {
-  constructor(public signalRService: SignalRService) {}
-
-  ngOnInit(): void {
-    this.signalRService.startConnection();
-  }
-}
+export class AppComponent {}

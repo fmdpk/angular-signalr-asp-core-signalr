@@ -1,0 +1,4 @@
+<div class="container">
+  <h1>Real-Time Price Updates</h1>
+  <h2>EUR/USD: {{ signalRService.messages$ | async | json }}</h2>
+</div>
